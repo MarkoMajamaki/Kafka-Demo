@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "ProducerApi",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_producerapi",
+            "program": "${workspaceFolder}/src/Producer.Api/bin/Debug/net6.0/Producer.Api.dll",
+            "cwd": "${workspaceFolder}/src/Producer.Api/",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "KAFKA__BOOTSTRAPSERVERS": "localhost:9092"
+            }
+        },
+        {
+            "name": "Consumer",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_consumer",
+            "program": "${workspaceFolder}/src/Consumer/bin/Debug/net6.0/Consumer.dll",
+            "cwd": "${workspaceFolder}/src/Consumer/",
+            "env": {
+                "KAFKA__BOOTSTRAPSERVERS": "localhost:9092"
+            },
+        },
+    ]
+}
